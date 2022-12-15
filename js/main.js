@@ -176,3 +176,26 @@ function someAction() {
       });
   //3
 //likes
+
+
+
+let isInViewport = function (elem) {
+  let distance = elem.getBoundingClientRect();
+  return (
+    distance.top >= 0 &&
+    distance.left >= 0 &&
+    distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
+
+let animateOnScroll = document.querySelectorAll('._scroll-animation');
+
+window.addEventListener('scroll', function (event) {
+  animateOnScroll.forEach(element => {
+    if (isInViewport(element)) {
+      element.classList.add("_scrolled");
+    }
+  });
+}, false);
