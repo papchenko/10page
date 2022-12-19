@@ -6,6 +6,7 @@ footer (html, css)
 Add:
 Text Animations
 Root Colors
+<<<<<<< HEAD
 
 ---
 
@@ -14,3 +15,5 @@ Add:
 youtube social icon
 
 ---
+=======
+>>>>>>> 4a83fbc2961881ad1000852487c9f414ee285081
