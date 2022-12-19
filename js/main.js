@@ -1,201 +1,201 @@
 // slide vertical
-let wrapper = document.querySelector('.wrapper');
-let pageSlider = new Swiper('.page', {
-    wrapperClass: 'page__wrapper', 
-    slideClass: 'page__screen',
-    direction: 'vertical',
-    slidesPerView: 'auto',
-    parallax: 'true',
-   keyboard: {
-       enabled: 'true',
-       onlyInViewport: true,
-       pageUpDown: true
-   },
-   mousewheel: {
-       sensitivity: 1,
-   },
-    watchOverflow: true,
-    speed: 800,
-    observer: true,
-    observePrevent: true,
-    observeSlideChildren: true,
-    pagination: {
-        el: '.page__pagination',
-        type: 'bullets',
-        clickable: 'true',
-        bulletClass: 'page__bullet',
-        bulletActiveClass: 'page__bullet_active'
+let wrapper = document.querySelector(".wrapper");
+let pageSlider = new Swiper(".page", {
+  wrapperClass: "page__wrapper",
+  slideClass: "page__screen",
+  direction: "vertical",
+  slidesPerView: "auto",
+  parallax: "true",
+  keyboard: {
+    enabled: "true",
+    onlyInViewport: true,
+    pageUpDown: true,
+  },
+  mousewheel: {
+    sensitivity: 1,
+  },
+  watchOverflow: true,
+  speed: 800,
+  observer: true,
+  observePrevent: true,
+  observeSlideChildren: true,
+  pagination: {
+    el: ".page__pagination",
+    type: "bullets",
+    clickable: "true",
+    bulletClass: "page__bullet",
+    bulletActiveClass: "page__bullet_active",
+  },
+  scrollbar: {
+    el: ".page__scroll",
+    dragClass: "page__drag-scroll",
+    draggable: true,
+  },
+  init: false,
+  on: {
+    init: function () {
+      wrapper.classList.add("_loaded");
     },
-    scrollbar: {
-        el: '.page__scroll',
-        dragClass: 'page__drag-scroll',
-        draggable: true
-    },
-    init: false,
-    on: {
-        init: function () {
-            wrapper.classList.add('_loaded');
-        }  
-    }
+  },
 });
-function setScrollType() {
-}
+function setScrollType() {}
 pageSlider.init();
 // slide vertical
 
 // slide horizontal
-const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      draggable: true,
+const swiper = new Swiper(".swiper", {
+  direction: "horizontal",
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    draggable: true,
     snapOnRelease: true,
-    },
-    slidesPerView: 'auto',
-    parallax: 'true',
-   keyboard: {
-       enabled: 'true',
-       onlyInViewport: true,
-       pageUpDown: true
-   },
-    simulateTouch: true,
-    touchRadio: 1,
-    touchAngle: 45,
-    grabCursor: true,
-    slideToClickedSlide: true,
-    hashNavigation: {
-      watchState: true,
-    },
-    watchOverflow: true,
-    // spaceBetween: 5,
-speed: 800,
-  });
+  },
+  slidesPerView: "auto",
+  parallax: "true",
+  keyboard: {
+    enabled: "true",
+    onlyInViewport: true,
+    pageUpDown: true,
+  },
+  simulateTouch: true,
+  touchRadio: 1,
+  touchAngle: 45,
+  grabCursor: true,
+  slideToClickedSlide: true,
+  hashNavigation: {
+    watchState: true,
+  },
+  watchOverflow: true,
+  // spaceBetween: 5,
+  speed: 800,
+});
 // slide horizontal
 
 // menu
-let iconMenu = document.querySelector('.menu__icon');
-let menuBody = document.querySelector('.menu__body')
+let iconMenu = document.querySelector(".menu__icon");
+let menuBody = document.querySelector(".menu__body");
 if (iconMenu) {
-    iconMenu.addEventListener('click', function(e) {
-        document.body.classList.toggle('_lock');
-        iconMenu.classList.toggle('_active');
-        menuBody.classList.toggle('_active');
-    })
+  iconMenu.addEventListener("click", function (e) {
+    document.body.classList.toggle("_lock");
+    iconMenu.classList.toggle("_active");
+    menuBody.classList.toggle("_active");
+  });
 }
 // menu
 
 //likes (each one) need to FIX!!!
-let item1 = document.querySelector('.item1');
-let item2 = document.querySelector('.item2');
-let item3 = document.querySelector('.item3');
+let item1 = document.querySelector(".item1");
+let item2 = document.querySelector(".item2");
+let item3 = document.querySelector(".item3");
 function someAction() {
-    item1.classList.toggle('color');
-  }
-   //1
-  function createLocaoStorage() {
-    if (getLocalStorage()) {
-      localStorage.removeItem("item1");
-    } else {
-      localStorage.setItem("item1", "get");
-    }
-  }
-  
-  function getLocalStorage() {
-    return localStorage.getItem("item1");
-  }
-  
+  item1.classList.toggle("color");
+}
+//1
+function createLocaoStorage() {
   if (getLocalStorage()) {
-    someAction();
+    localStorage.removeItem("item1");
+  } else {
+    localStorage.setItem("item1", "get");
   }
-  
-  document
-    .querySelector(".item1")
-    .addEventListener("click", function () {
-      createLocaoStorage();
-      someAction();
-    });
-    //1
-    //2
-    function someAction2() {
-        item2.classList.toggle('color');
-      }
-      
-      function createLocaoStorage2() {
-        if (getLocalStorage2()) {
-          localStorage.removeItem("item2");
-        } else {
-          localStorage.setItem("item2", "get");
-        }
-      }
-      
-      function getLocalStorage2() {
-        return localStorage.getItem("item2");
-      }
-      
-      if (getLocalStorage2()) {
-        someAction2();
-      }
-      
-      document
-        .querySelector(".item2")
-        .addEventListener("click", function () {
-          createLocaoStorage2();
-          someAction2();
-        });
-    //2
-    //3
-    function someAction3() {
-      item3.classList.toggle('color');
-    }
-    
-    function createLocaoStorage3() {
-      if (getLocalStorage3()) {
-        localStorage.removeItem("item3");
-      } else {
-        localStorage.setItem("item3", "get");
-      }
-    }
-    
-    function getLocalStorage3() {
-      return localStorage.getItem("item3");
-    }
-    
-    if (getLocalStorage3()) {
-      someAction3();
-    }
-    
-    document
-      .querySelector(".item3")
-      .addEventListener("click", function () {
-        createLocaoStorage3();
-        someAction3();
-      });
-  //3
+}
+
+function getLocalStorage() {
+  return localStorage.getItem("item1");
+}
+
+if (getLocalStorage()) {
+  someAction();
+}
+
+document.querySelector(".item1").addEventListener("click", function () {
+  createLocaoStorage();
+  someAction();
+});
+//1
+//2
+function someAction2() {
+  item2.classList.toggle("color");
+}
+
+function createLocaoStorage2() {
+  if (getLocalStorage2()) {
+    localStorage.removeItem("item2");
+  } else {
+    localStorage.setItem("item2", "get");
+  }
+}
+
+function getLocalStorage2() {
+  return localStorage.getItem("item2");
+}
+
+if (getLocalStorage2()) {
+  someAction2();
+}
+
+document.querySelector(".item2").addEventListener("click", function () {
+  createLocaoStorage2();
+  someAction2();
+});
+//2
+//3
+function someAction3() {
+  item3.classList.toggle("color");
+}
+
+function createLocaoStorage3() {
+  if (getLocalStorage3()) {
+    localStorage.removeItem("item3");
+  } else {
+    localStorage.setItem("item3", "get");
+  }
+}
+
+function getLocalStorage3() {
+  return localStorage.getItem("item3");
+}
+
+if (getLocalStorage3()) {
+  someAction3();
+}
+
+document.querySelector(".item3").addEventListener("click", function () {
+  createLocaoStorage3();
+  someAction3();
+});
+//3
 //likes
 
-
-
+// ---------------------------------
+// Animation text CODE BY Yuriy
 let isInViewport = function (elem) {
   let distance = elem.getBoundingClientRect();
   return (
     distance.top >= 0 &&
     distance.left >= 0 &&
-    distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+    distance.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    distance.right <=
+      (window.innerWidth || document.documentElement.clientWidth)
   );
 };
 
+let animateOnScroll = document.querySelectorAll("._scroll-animation");
 
-let animateOnScroll = document.querySelectorAll('._scroll-animation');
-
-window.addEventListener('scroll', function (event) {
-  animateOnScroll.forEach(element => {
-    if (isInViewport(element)) {
-      element.classList.add("_scrolled");
-    }
-  });
-}, false);
+window.addEventListener(
+  "scroll",
+  function (event) {
+    animateOnScroll.forEach((element) => {
+      if (isInViewport(element)) {
+        element.classList.add("_scrolled");
+      }
+    });
+  },
+  false
+);
+// Animation text CODE BY Yuriy
+// ---------------------------------

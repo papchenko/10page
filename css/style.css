@@ -483,17 +483,16 @@ body._lock {
     border-radius: 100%;
     color: #030101;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 28px;
     text-decoration: none;
     transition: all 0.4s ease-in-out;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
+    width: 34px;
+    height: 34px;
+    line-height: 33.333px;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    top: 5px;
-    margin: 12px 6px 0px 6px;
+    margin: -400px 6px 10px 6px;
   }
   .social-icon li a:hover {
     background: #000000;
