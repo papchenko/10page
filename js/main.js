@@ -91,10 +91,12 @@ if (iconMenu) {
 let item1 = document.querySelector(".item1");
 let item2 = document.querySelector(".item2");
 let item3 = document.querySelector(".item3");
+let item4 = document.querySelector(".item4");
+//
+//1
 function someAction() {
   item1.classList.toggle("color");
 }
-//1
 function createLocaoStorage() {
   if (getLocalStorage()) {
     localStorage.removeItem("item1");
@@ -168,6 +170,32 @@ document.querySelector(".item3").addEventListener("click", function () {
   someAction3();
 });
 //3
+//4
+function someAction4() {
+  item4.classList.toggle("color");
+}
+
+function createLocaoStorage4() {
+  if (getLocalStorage4()) {
+    localStorage.removeItem("item4");
+  } else {
+    localStorage.setItem("item4", "get");
+  }
+}
+
+function getLocalStorage4() {
+  return localStorage.getItem("item4");
+}
+
+if (getLocalStorage4()) {
+  someAction4();
+}
+
+document.querySelector(".item4").addEventListener("click", function () {
+  createLocaoStorage4();
+  someAction4();
+});
+//4
 //likes
 
 // ---------------------------------
